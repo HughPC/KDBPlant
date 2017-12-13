@@ -1,5 +1,5 @@
 \p 0W
-system"l C:/Users/cloug/Documents/kdb/plant/schema.q"
+system"l C:/Users/cloug/Documents/kdb/plantGit/schema.q"
 
 /get username
 optionCheck["-user";"username";program];

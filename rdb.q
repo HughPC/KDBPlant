@@ -1,5 +1,5 @@
 \p 0W
-\l c:/Users/cloug/Documents/kdb/plant/schema.q
+\l c:/Users/cloug/Documents/kdb/plantGit/schema.q
 system"l ",DIR,"tables.q"
 system"l ",DIR,"netLog.q"
 system"l ",DIR,"users.q"

@@ -1,4 +1,4 @@
-\l C:\Users\cloug\Documents\kdb\plant\schema.q
+\l C:\Users\cloug\Documents\kdb\plantGit\schema.q
 
 /connecting to the data 
 /optionCheck["-portFX";"portFX";0];

@@ -1,5 +1,5 @@
 /working directory
-DIR:"C:/Users/cloug/Documents/kdb/plant/"
+DIR:"C:/Users/cloug/Documents/kdb/plantGit/"
 /fast load
 /load:{[filename,DIR]system "l ",DIR,string filename,".q"}
 
