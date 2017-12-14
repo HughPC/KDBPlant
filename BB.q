@@ -14,7 +14,7 @@ prt:system"p"
 /check who is logging in
 permis:{[user;pass]access::min (uBB[user]~pass; not user~""; not pass~"");access}
 
-tickers:([]stocks:`VOD`BAE;prices:10 20);
+tickers:([]stocks:realStock.sym;prices:realStock.price);
 update varince:prices*0.1 from `tickers
 if[1 = count tickers;tickers:enlist tickers]
 length:10
