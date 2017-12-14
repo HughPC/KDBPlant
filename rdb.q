@@ -18,10 +18,10 @@ permis:{[user;pass]access::min (uRDB[user]~pass; not user~""; not pass~"");acces
 /reset .z.pg
 .z.pg:.z.pgOld
 
-
 /allow counting the number of bids or asks
-/TODO get the stocks to filter by
 getTick:{[tableName]stocks::distinct value tableName,".ticker"}
-stockCount:([]ticker:stocks;askcount:cask'[stocks;`BA];bidcount:cbid'[stocks;`BA])
 cbid:{[stock;tableName]count select from tableName where not biddate=0Np,ticker=stock}
 cask:{[stock;tableName]count select from tableName where not askdate=0Np,ticker=stock}
+getTableLen:{[tableName]getTick[tableName];
+	stockCount::([]ticker:stocks;askcount:cask'[stocks;`$tableName];bidcount:cbid'[stocks;`$tableName])
+ }
