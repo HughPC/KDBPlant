@@ -1,8 +1,11 @@
 \p 0W
-system"l C:/Users/cloug/Documents/kdb/plant/schema.q"
+system"l C:/Users/cloug/Documents/kdb/plantGit/schema.q"
 system"l ",DIR,"tables.q"
 system"l ",DIR,"netLog.q"
 system"l ",DIR,"users.q"
+
+/load the stock table to work with
+system"l ",DIR,"get_FTSE.q"
 
 /saving the port number to a binary file
 prt:system"p"
