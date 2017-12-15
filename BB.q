@@ -35,8 +35,12 @@ getSide:{[BA]$[0 < exec bidvol-askvol from BA;side::1;
 updateTables:{[BA;updateT;clearT;minMax;stock]
 	$[`ask~updateT;
 		(`tradeHist insert .z.p, value exec ticker,tradeVol:bidvol,0.5*bid+ask,biduser,askuser  from BA;
+		symDict[stock]:.z.p,exec 0.5*bid+ask from BA;
 		`ask insert value exec biddate,ticker,ask, abs bidvol - askvol,askuser from BA;);
 		(`tradeHist insert .z.p, value exec ticker,tradeVol:askvol,0.5*bid+ask,biduser,askuser  from BA;
+		/debug;
+		/show ticker;
+		symDict[stock]:.z.p,exec 0.5*bid+ask from BA;
 		`bid insert value exec biddate,ticker,bid, abs bidvol - askvol,biduser from BA)
 		];
 	/top will empty
@@ -91,6 +95,7 @@ makeTrade:{[stock]
 	makeTrade'[tickers.stocks];
 	sendData[UPD;neg subs;`BA;bid^ask];
 	sendData[UPD;neg subs;`tradeHist;tradeHist];
+	sendData[UPD;neg subs;`syms;symDict]
 	tradeArc::tradeArc,tradeHist;
 	delete from `tradeHist
  }
