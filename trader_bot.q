@@ -18,8 +18,8 @@ placeOrder:{[side;ticker;val;ammount]bbH(insert;side;.z.P,ticker,val,ammount,`$u
 tLen:{[tableName]rdbH "getTableLen[\"",tableName,"\"]";show rdbH stockCount}
 
 tLen1:{[tableName]rdbH (`getTableLen;tableName);rdbH `stockCount}
-ucb:{[tableName]rdbH "cbid[`",tableName,"]" }
-uca:{[tableName]rdbH "cask[`",tableName,"]" }
+ucb:{[stock;tableName]rdbH (`cbid;stock;tableName) }
+uca:{[stock;tableName]rdbH (`cask;stock;tableName) }
 
 /autoFill:{[sym]}'[rdbH symBid;]
 
@@ -29,5 +29,5 @@ uca:{[tableName]rdbH "cask[`",tableName,"]" }
 show "logged in"
 
 -1"-----NOTICE FOR USE-----\ngetMe[`tableName] for tables\nplaceOrder[`side;`ticker;price;ammount] to place orders";
--1"number of each stock tLen[\"tableName\"]";
+-1"number of each stock tLen[`stock;`tableName]";
 
