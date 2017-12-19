@@ -23,5 +23,10 @@ getTick:{[tableName]stocks::distinct value tableName,".ticker"}
 cbid:{[stock;tableName]count select from tableName where not biddate=0Np,ticker=stock}
 cask:{[stock;tableName]count select from tableName where not askdate=0Np,ticker=stock}
 getTableLen:{[tableName]getTick[tableName];
-	stockCount::([]ticker:stocks;askcount:cask'[stocks;`$tableName];bidcount:cbid'[stocks;`$tableName])
+	stockCount::([]sym:stocks;askcount:cask'[stocks;`$tableName];bidcount:cbid'[stocks;`$tableName])
  }
+ 
+symBid:exec sym where bidcount < 10
+symAsk:exec sym where askcount < 10
+
+
